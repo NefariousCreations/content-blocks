@@ -1,0 +1,16 @@
+
+"name": "nefariouscreations/content-blocks",
+"type": "plugin",
+"license": "MIT",
+"description": "A simple content block post type plugin for WordPress.",
+"homepage": "https://github.com/nefariouscreations/content-blocks",
+"authors": [
+{
+"name": "Corey Crowden",
+"email": "corey@nefariouscreations.com.au",
+"homepage": "https://nefariouscreations.com.au"
+}
+],
+"config": {
+"preferred-install": "dist"
+}
