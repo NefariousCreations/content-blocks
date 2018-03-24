@@ -125,34 +125,29 @@ class content_blocks_widget extends WP_Widget {
 
     if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-      // If a title is set display it
-      if ( $instance['show_title'] == 1 ) {
-        // Widget Title Open Wrap
-        $widget_content .= $args['before_title'];
-        // Display Widget Set Title
-        $widget_content .= apply_filters('widget_title', $instance['display_title'], $instance, $this->id_base);
-        // Widget Title Close Wrap
-        $widget_content .= $args['after_title'];
-      }
-
+      // Widget Title Open Wrap
+      $widget_content .= $args['before_title'];
+      // Display Widget Set Title
+      $widget_content .= apply_filters('widget_title', $instance['display_title'], $instance, $this->id_base);
+      // Widget Title Close Wrap
+      $widget_content .= $args['after_title'];
+      
       // Widget Content
-      if ( ! empty( $instance['show_content'] ) ) {
-        $widget_content .= '<div class="entry-content">';
+      $widget_content .= '<div class="entry-content">';
 
-        // Individually apply content filters to avoid conflicting with content builders
-        $content_block_content = get_the_content();
-        $content_block_content = wptexturize($content_block_content);
-        $content_block_content = convert_smilies($content_block_content);
-        $content_block_content = convert_chars($content_block_content);
-        $content_block_content = wpautop($content_block_content);
-        $content_block_content = shortcode_unautop($content_block_content);
-        $content_block_content = prepend_attachment($content_block_content);
+      // Individually apply content filters to avoid conflicting with content builders
+      $content_block_content = get_the_content();
+      $content_block_content = wptexturize($content_block_content);
+      $content_block_content = convert_smilies($content_block_content);
+      $content_block_content = convert_chars($content_block_content);
+      $content_block_content = wpautop($content_block_content);
+      $content_block_content = shortcode_unautop($content_block_content);
+      $content_block_content = prepend_attachment($content_block_content);
 
-        // Do the shortcode and add to widget content
-        $widget_content .= do_shortcode($content_block_content);
+      // Do the shortcode and add to widget content
+      $widget_content .= do_shortcode($content_block_content);
 
-        $widget_content .= '</div>';
-      }
+      $widget_content .= '</div>';
 
       endwhile;
     endif;
