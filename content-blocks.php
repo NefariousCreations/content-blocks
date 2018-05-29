@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Content Blocks
+ * Plugin Name: Content Blocks by Nefarious Creations
  * Plugin URI: https://nefariouscreations.com.au
  * Description: Content Blocks Custom Content Type & Widget
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Nefarious Creations
  * Author URI: https://nefariouscreations.com.au
  */
