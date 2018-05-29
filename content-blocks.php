@@ -20,6 +20,8 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 
 $myUpdateChecker->setBranch('master');
 
+//------------------------------------------------------------------------------
+
 /**
  * Content Blocks Custom Post Type
  */
@@ -68,6 +70,7 @@ add_action( 'init', function () {
     'supports'            => array( 'title', 'editor', 'revisions' ),
 
     'labels'              => $labels,
+    'show_in_rest'        => true,
     'menu_position'       => 50,
     'menu_icon'           => 'dashicons-format-aside',
   );
