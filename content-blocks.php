@@ -9,6 +9,18 @@
  */
 
 /**
+ * Load Plugin Update Checker
+ */
+require 'vendor/yahnis-elsts/plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+  'https://github.com/NefariousCreations/content-blocks/',
+  __FILE__, //Full path to the main plugin file or functions.php.
+  'content-blocks'
+);
+
+$myUpdateChecker->setBranch('master');
+
+/**
  * Content Blocks Custom Post Type
  */
 add_action( 'init', function () {
