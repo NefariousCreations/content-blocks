@@ -3,7 +3,7 @@
  * Plugin Name: Content Blocks by Nefarious Creations
  * Plugin URI: https://nefariouscreations.com.au
  * Description: Content Blocks Custom Content Type & Widget
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: Nefarious Creations
  * Author URI: https://nefariouscreations.com.au
  */
@@ -141,11 +141,13 @@ class content_blocks_widget extends WP_Widget {
     if ( have_posts() ) : while ( have_posts() ) : the_post();
 
       // Widget Title Open Wrap
-      echo $args['before_title'];
-      // Display Widget Set Title
-      echo apply_filters('widget_title', $instance['display_title'], $instance, $this->id_base);
-      // Widget Title Close Wrap
-      echo $args['after_title'];
+      if ($instance['display_title'] == '1') :
+        echo $args['before_title'];
+        // Display Widget Set Title
+        echo apply_filters('widget_title', $instance['display_title'], $instance, $this->id_base);
+        // Widget Title Close Wrap
+        echo $args['after_title'];
+      endif;
       
       // Widget Content
       echo '<div class="entry-content">';
