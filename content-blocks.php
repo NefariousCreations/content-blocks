@@ -3,7 +3,7 @@
  * Plugin Name: Content Blocks by Nefarious Creations
  * Plugin URI: https://nefariouscreations.com.au
  * Description: Content Blocks Custom Content Type & Widget
- * Version: 1.0.2
+ * Version: 1.1.0
  * Author: Nefarious Creations
  * Author URI: https://nefariouscreations.com.au
  */
