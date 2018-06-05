@@ -133,7 +133,7 @@ class content_blocks_widget extends WP_Widget {
     $instance = wp_parse_args( (array) $instance, $this->defaults );
 
     // Before Widget Wrap
-    $widget_content  = $args['before_widget'];
+    echo $args['before_widget'];
 
     // Content Block
     $wp_query = new WP_Query( array('post_type' => 'content-blocks', 'page_id' => $instance['page_id'] ) );
@@ -141,28 +141,19 @@ class content_blocks_widget extends WP_Widget {
     if ( have_posts() ) : while ( have_posts() ) : the_post();
 
       // Widget Title Open Wrap
-      $widget_content .= $args['before_title'];
+      echo $args['before_title'];
       // Display Widget Set Title
-      $widget_content .= apply_filters('widget_title', $instance['display_title'], $instance, $this->id_base);
+      echo apply_filters('widget_title', $instance['display_title'], $instance, $this->id_base);
       // Widget Title Close Wrap
-      $widget_content .= $args['after_title'];
+      echo $args['after_title'];
       
       // Widget Content
-      $widget_content .= '<div class="entry-content">';
+      echo '<div class="entry-content">';
 
       // Individually apply content filters to avoid conflicting with content builders
-      $content_block_content = get_the_content();
-      $content_block_content = wptexturize($content_block_content);
-      $content_block_content = convert_smilies($content_block_content);
-      $content_block_content = convert_chars($content_block_content);
-      $content_block_content = wpautop($content_block_content);
-      $content_block_content = shortcode_unautop($content_block_content);
-      $content_block_content = prepend_attachment($content_block_content);
+      the_content();
 
-      // Do the shortcode and add to widget content
-      $widget_content .= do_shortcode($content_block_content);
-
-      $widget_content .= '</div>';
+      echo '</div>';
 
       endwhile;
     endif;
@@ -171,7 +162,7 @@ class content_blocks_widget extends WP_Widget {
     wp_reset_query();
 
     // After Widget Wrap
-    $widget_content .= $args['after_widget'];
+    echo $args['after_widget'];
 
     // Echo The Widget
     echo $widget_content;
