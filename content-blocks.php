@@ -166,9 +166,6 @@ class content_blocks_widget extends WP_Widget {
     // After Widget Wrap
     echo $args['after_widget'];
 
-    // Echo The Widget
-    echo $widget_content;
-
   }
 
   /**
