@@ -148,14 +148,9 @@ class content_blocks_widget extends WP_Widget {
         // Widget Title Close Wrap
         echo $args['after_title'];
       endif;
-      
-      // Widget Content
-      echo '<div class="entry-content">';
 
       // Individually apply content filters to avoid conflicting with content builders
       the_content();
-
-      echo '</div>';
 
       endwhile;
     endif;
