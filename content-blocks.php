@@ -3,7 +3,7 @@
  * Plugin Name: Content Blocks by Nefarious Creations
  * Plugin URI: https://nefariouscreations.com.au
  * Description: Content Blocks Custom Content Type & Widget
- * Version: 1.1.13
+ * Version: 1.1.14
  * Author: Nefarious Creations
  * Author URI: https://nefariouscreations.com.au
  */
@@ -13,7 +13,7 @@
  */
 require 'vendor/yahnis-elsts/plugin-update-checker/plugin-update-checker.php';
 $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-  'https://github.com/NefariousCreations/content-blocks/',
+  'https://bitbucket.org/nefariouscreations/content-blocks',
   __FILE__, //Full path to the main plugin file or functions.php.
   'content-blocks'
 );
